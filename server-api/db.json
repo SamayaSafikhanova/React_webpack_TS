@@ -1,0 +1,14 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Leyla Axmedova",
+      "email": "leyla@email.com"
+    },
+    {
+      "id": 2,
+      "name": "testUser",
+      "email": "safikhanoff22@"
+    }
+  ]
+}
