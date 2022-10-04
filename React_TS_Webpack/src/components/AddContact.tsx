@@ -13,9 +13,9 @@ import {
     ModalBody,
     ModalCloseButton,
   } from '@chakra-ui/react' 
- interface IProps {
-    contacts:Props["contacts"],
-    setContacts: React.Dispatch<React.SetStateAction<Props["contacts"]>>
+   interface IProps {
+    contacts:Props["contact"][],
+    setContacts: React.Dispatch<React.SetStateAction<Props["contact"][]>>
     addContact: (contact: Props["contact"]) => Promise<void>
 }
   export const AddContact:React.FC<IProps> = ({contacts, setContacts, addContact}) => {

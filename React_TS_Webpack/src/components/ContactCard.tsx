@@ -10,8 +10,8 @@ import {
 
     interface IProps {
         text:string, 
-        contacts:Props["contacts"],
-        searchResults:Props["contacts"],
+        contacts:Props["contact"][],
+        searchResults:Props["contact"][],
         deleteContact: (id: string) => Promise<void>, 
         updateContact: (contact: Props["contact"]) => Promise<void>
     }

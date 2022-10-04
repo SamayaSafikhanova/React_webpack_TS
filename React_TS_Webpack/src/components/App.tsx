@@ -4,12 +4,7 @@ import {AddContact} from './AddContact';
 import {ContactCard} from './ContactCard'
 import { Box ,Input } from "@chakra-ui/react" 
  
-export interface IState{
-  contacts:{
-  id?:string;
-  name:string,
-  email:string
-}[],
+export interface IState{ 
   contact:{
   id?:string;
   name:string,
@@ -19,9 +14,9 @@ export interface IState{
  
 export const App = () => { 
  
-const [contacts, setContacts]=useState<IState["contacts"]>([]);
+const [contacts, setContacts]=useState<IState["contact"][]>([]);
 const [text, setText] = useState<string>("");
-const [searchResults, setSearchResults] = useState<IState["contacts"]>(contacts);
+const [searchResults, setSearchResults] = useState<IState["contact"][]>(contacts);
 
 useEffect(() => {
   const getContacts = async () => {
@@ -99,11 +94,10 @@ const searchHandler = (searchTerm:string) => {
   return (
     <> 
     <Box  className='box' textAlign={'center'} maxWidth='500px' mt={10} mr={'auto'} ml={'auto'} p={5} borderWidth='1px' borderRadius='lg' overflow='hidden'>
-  
       <AddContact contacts={contacts} setContacts={setContacts} addContact={addContact}/>
       <Input onChange={(e)=>{searchHandler(e.target.value);}} mt={5} mb={5} placeholder='Axtar' />
       <ContactCard  text={text} searchResults={searchResults} contacts={contacts} deleteContact={deleteContact} updateContact={updateContact}/>
-      </Box>
+    </Box>
     </>
   )
 };
